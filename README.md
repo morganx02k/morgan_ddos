@@ -1,3 +1,5 @@
+![Morgan DDOS Banner]([https://url-da-imagem.com/banner.jpg](https://www.google.com/url?sa=i&url=https%3A%2F%2Fgifer.com%2Fpt%2F6myB&psig=AOvVaw2NxKoSRXIKvtvxydURecaD&ust=1734979928650000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqGAoTCPiosYGGvIoDFQAAAAAdAAAAABCGAQ))
+
 # Morgan DDOS Script
 
 Este é um script de ataque de negação de serviço distribuído (DDoS), escrito em Python, que permite realizar diferentes tipos de ataques de inundação (flood) contra servidores. O código utiliza múltiplas threads para enviar pacotes repetidos, com a possibilidade de usar proxies para mascarar a origem do tráfego.
