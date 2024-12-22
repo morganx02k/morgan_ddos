@@ -94,3 +94,6 @@ Este código é fornecido apenas para fins educacionais. O autor não se respons
 ---
 
 **Aviso:** O uso de DDoS sem autorização é crime em muitos países. O autor não apoia ou incentiva práticas ilegais.
+
+
+**Just like Dexter Morgan, everyone has hidden secrets and vices that only you can know**
