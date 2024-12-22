@@ -1,4 +1,4 @@
-![Morgan DDOS Banner]([https://url-da-imagem.com/banner.jpg](https://www.google.com/url?sa=i&url=https%3A%2F%2Fgifer.com%2Fpt%2F6myB&psig=AOvVaw2NxKoSRXIKvtvxydURecaD&ust=1734979928650000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqGAoTCPiosYGGvIoDFQAAAAAdAAAAABCGAQ))
+![Morgan DDOS Banner]([[https://url-da-imagem.com/banner.jpg](https://www.google.com/url?sa=i&url=https%3A%2F%2Fgifer.com%2Fpt%2F6myB&psig=AOvVaw2NxKoSRXIKvtvxydURecaD&ust=1734979928650000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqGAoTCPiosYGGvIoDFQAAAAAdAAAAABCGAQ)](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.imdb.com%2Fpt%2Ftitle%2Ftt1444420%2F&psig=AOvVaw0SCc3AnsooRRMuImNqxKA0&ust=1734980037580000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCIjchryGvIoDFQAAAAAdAAAAABAE))
 
 # Morgan DDOS Script
 
