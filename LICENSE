@@ -2,9 +2,32 @@ MIT License
 
 Copyright (c) 2024 Morgan
 
-Aqui você pode adicionar um breve resumo do que o software faz e as permissões de uso.
-
 A permissão é concedida, gratuitamente, a qualquer pessoa que obtenha uma cópia deste software e dos arquivos de documentação associados, para que possa lidar no software sem restrição, incluindo, mas não se limitando a, direitos de uso, cópia, modificação, fusão, publicação, distribuição, sublicenciamento e/ou venda de cópias do software, e para permitir que as pessoas a quem o software é fornecido o façam, desde que as seguintes condições sejam atendidas:
 
 1. O aviso de copyright e este aviso de permissão serão incluídos em todas as cópias ou partes substanciais do software.
-2. O software é fornecido "como está", sem qualquer garantia expressa ou implícita, incluindo, mas não se limitando a, garantias de comercialização, adequação a um propósito específico e não violação. Em nenhum caso o autor ou os titulares do copyright serão responsáveis por qualquer reivindicação, dano ou outra responsabilidade, seja em uma ação de contrato, ato ilícito ou outra ação, decorrente de, ou em conexão com o software ou o uso ou outros negócios no software.
+
+**Uso Responsável e Legal**
+
+O uso deste software deve ser feito de forma responsável e em conformidade com todas as leis locais, nacionais e internacionais aplicáveis. Este código foi desenvolvido com o objetivo de fins educacionais e de testes em ambientes controlados, como laboratórios de segurança, redes privadas e servidores dedicados a fins de simulação e estudo de redes. O uso deste software em sistemas de terceiros, sem a permissão expressa do proprietário ou administrador, pode resultar em atividades ilegais, como invasão de privacidade, interrupção de serviços ou danos à infraestrutura de rede.
+
+O uso de ataques de negação de serviço (DoS) ou outros tipos de ataques cibernéticos pode violar as leis de muitos países, incluindo as leis de crimes cibernéticos, e pode levar a sérias consequências legais, como processos judiciais, penalidades financeiras e até prisão. Este software **não deve** ser usado em servidores ou sistemas de produção sem permissão, e o usuário assume total responsabilidade pelas consequências de seu uso indevido.
+
+**Aviso Legal sobre Responsabilidade:**
+
+Este software é fornecido "como está", sem garantias de qualquer tipo, expressas ou implícitas, incluindo, mas não se limitando a, garantias de comercialização ou adequação a um propósito específico. O autor e os colaboradores não são responsáveis por quaisquer danos, perdas ou consequências legais que possam surgir do uso do software.
+
+O uso deste software em qualquer ambiente de produção, servidores públicos ou de terceiros, sem permissão explícita, pode resultar em danos financeiros, perda de dados ou danos à reputação do usuário. O autor do código não se responsabiliza por qualquer consequência legal ou técnica decorrente do uso deste software fora de um ambiente de testes controlado.
+
+**Requisitos de Conformidade Legal:**
+
+Antes de utilizar este software, verifique as leis locais relacionadas à segurança cibernética e ataques DDoS (negação de serviço distribuída). Este software pode ser sujeito a restrições legais severas em alguns países, e os usuários são fortemente aconselhados a buscar aconselhamento jurídico antes de implementar qualquer forma de teste de estresse em redes ou sistemas que não são de sua propriedade ou controle.
+
+O uso inadequado deste software pode resultar em responsabilidades civis e criminais, dependendo da jurisdição, e o autor não será responsável por qualquer violação legal resultante do uso do software.
+
+**Conselho para Testes e Desenvolvimento:**
+
+- **Use apenas em ambientes de testes e laboratórios de segurança**: Teste este software somente em redes controladas e em sistemas próprios ou com a permissão explícita do proprietário do sistema.
+- **Evite usar em servidores públicos**: O uso deste software em servidores acessíveis ao público pode resultar em danos irreparáveis, incluindo interrupção de serviços e acessos não autorizados.
+- **Tenha permissão por escrito**: Ao realizar testes em sistemas de terceiros, sempre obtenha permissão explícita por escrito e documentada para evitar qualquer violação legal.
+
+Ao usar este software, você concorda que entende e assume total responsabilidade por suas ações. O autor não se responsabiliza por quaisquer danos causados por violações de segurança, danos à infraestrutura de rede ou quaisquer outras consequências legais resultantes do uso deste código.
