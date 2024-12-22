@@ -45,7 +45,7 @@ Para rodar o script, siga os passos abaixo:
 
 2. Acesse a pasta do projeto:
    ```bash
-   cd morgan-ddos
+   cd morgan_ddos
    ```
 
 3. Instale as dependências:
