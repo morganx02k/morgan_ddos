@@ -1,14 +1,3 @@
-   *                              
- (  `                             
- )\))(      (   (  (     )        
-((_)()\  (  )(  )\))( ( /(  (     
-(_()((_) )\(()\((_))\ )(_)) )\ )  
-|  \/  |((_)((_)(()(_|(_)_ _(_/(  
-| |\/| / _ \ '_/ _` |/ _` | ' \)) 
-|_|  |_\___/_| \__, |\__,_|_||_|  
-               |___/ DDOS-ATACK    
-
-
 # Morgan DDOS Script
 
 Este é um script de ataque de negação de serviço distribuído (DDoS), escrito em Python, que permite realizar diferentes tipos de ataques de inundação (flood) contra servidores. O código utiliza múltiplas threads para enviar pacotes repetidos, com a possibilidade de usar proxies para mascarar a origem do tráfego.
