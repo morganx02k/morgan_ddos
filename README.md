@@ -40,7 +40,7 @@ Para rodar o script, siga os passos abaixo:
 
 1. Clone o repositório para o seu computador:
    ```bash
-   git clone https://github.com/seu-usuario/morgan-ddos.git
+   git clone https://github.com/morganx02k/morgan_ddos.git
    ```
 
 2. Acesse a pasta do projeto:
