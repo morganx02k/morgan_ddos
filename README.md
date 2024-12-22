@@ -1,4 +1,4 @@
-![Morgan DDOS Banner](https://ibb.co/hXnxrTZ)
+![Morgan DDOS Banner](https://i.ibb.co/hXnxrTZ/banner.jpg)
 
 # Morgan DDOS Script
 
